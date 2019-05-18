@@ -1,2 +1,2 @@
 # cinema-manager
-Cinema manager system
+Cinema management system
