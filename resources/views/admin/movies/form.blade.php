@@ -1,19 +1,27 @@
-<div class="form-group">
-    <label for="title">Movie title</label>
-    <input type="text" class="form-control" id="title" name="title" placeholder="Movie title"
-           value="{{ !empty($movie)?$movie->title:'' }}">
-</div>
-<div class="form-group">
-    <label for="title">Year of release</label>
-    <input type="number" class="form-control" id="release_year" name="release_year"
-           placeholder="Year of release"
-           min="1900"
-           max="2100" value="{{ !empty($movie)?$movie->release_year:'' }}">
-</div>
-<div class="form-group">
-    <label for="title">Movie poster</label>
-    <input type="file" class="form-control" id="movie_poster" name="movie_poster"
-           placeholder="Movie title">
+<div class="row">
+    <div class="col-md-10">
+        <div class="form-group">
+            <label for="title">Movie title</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Movie title"
+                   value="{{ !empty($movie)?$movie->title:'' }}">
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="form-group">
+            <label for="title">Year of release</label>
+            <input type="number" class="form-control" id="release_year" name="release_year"
+                   placeholder="Year of release"
+                   min="1900"
+                   max="2100" value="{{ !empty($movie)?$movie->release_year:'' }}">
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="title">Movie poster</label>
+            <input type="file" class="form-control" id="movie_poster" name="movie_poster"
+                   placeholder="Movie title">
+        </div>
+    </div>
 </div>
 @if(!empty($people))
     <div class="row">
