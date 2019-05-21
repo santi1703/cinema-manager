@@ -14,14 +14,16 @@
                     <th style="width: 8%">Date of birth</th>
                     <th style="width: 8%"></th>
                 </tr>
-                @foreach($people as $person)
+                @forelse($people as $person)
                     <tr>
                         <td>{{ $person->id }}</td>
                         <td><a href="{{ route('people.edit', ['id' => $person->id]) }}">{{ $person->fullName }}</a></td>
                         <td>{{ $person->date_of_birth }}</td>
                         <td><button class="btn btn-danger" data-id="{{ $person->id }}" onclick="remove(this)">Delete</button></td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr><td colspan="4">There are no persons in the system yet.</td></tr>
+                @endforelse
                 </tbody>
             </table>
             <div class="row">

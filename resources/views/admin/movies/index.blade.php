@@ -15,7 +15,7 @@
                     <th style="width: 8%">Year of release</th>
                     <th style="width: 8%"></th>
                 </tr>
-                @foreach($movies as $movie)
+                @forelse($movies as $movie)
                     <tr>
                         <td>{{ $movie->id }}</td>
                         <td><a href="{{ route('movies.edit', ['id' => $movie->id]) }}">{{ $movie->title }}</a></td>
@@ -23,7 +23,9 @@
                         <td>{{ $movie->release_year }}</td>
                         <td><button class="btn btn-danger" data-id="{{ $movie->id }}" onclick="remove(this)">Delete</button></td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr><td colspan="5">There are no movies in the system yet.</td></tr>
+                @endforelse
                 </tbody>
             </table>
             <div class="row">

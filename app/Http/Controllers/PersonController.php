@@ -27,7 +27,7 @@ class PersonController extends Controller
      */
     public function create()
     {
-        $persons = Movie::all();
+        $movies = Movie::all();
 
         return view('admin.people.create', compact('movies'));
     }

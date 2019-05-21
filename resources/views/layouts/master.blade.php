@@ -62,7 +62,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" style="background-color: #e8312c;">
                         <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                             <form id="logout-form" action="{{ route('logout') }}" method="POST"

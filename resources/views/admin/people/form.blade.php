@@ -21,45 +21,46 @@
         </div>
     </div>
 </div>
-
-<div class="row">
-    <div class="col-md-4">
-        <div class="form-group">
-            <label for="title">Movies as actor</label>
-            <select multiple class="form-control" name="as_actor[]">
-                <option value="">None</option>
-                @foreach($movies as $movie)
-                    <option
-                        {{ !empty($asActor) && in_array($movie->id, $asActor)?'selected':'' }} value="{{ $movie->id }}">{{ $movie->title }}</option>
-                @endforeach
-            </select>
+@if(!empty($movies))
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="title">Movies as actor</label>
+                <select multiple class="form-control" name="as_actor[]">
+                    <option value="">None</option>
+                    @foreach($movies as $movie)
+                        <option
+                            {{ !empty($asActor) && in_array($movie->id, $asActor)?'selected':'' }} value="{{ $movie->id }}">{{ $movie->title }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="title">Movies as director</label>
+                <select multiple class="form-control" name="as_director[]">
+                    <option value="">None</option>
+                    @foreach($movies as $movie)
+                        <option
+                            {{ !empty($asDirector) && in_array($movie->id, $asDirector)?'selected':'' }} value="{{ $movie->id }}">{{ $movie->title }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="title">Movies as producer</label>
+                <select multiple class="form-control" name="as_producer[]">
+                    <option value="">None</option>
+                    @foreach($movies as $movie)
+                        <option
+                            {{ !empty($asProducer) && in_array($movie->id, $asProducer)?'selected':'' }} value="{{ $movie->id }}">{{ $movie->title }}</option>
+                    @endforeach
+                </select>
+            </div>
         </div>
     </div>
-    <div class="col-md-4">
-        <div class="form-group">
-            <label for="title">Movies as director</label>
-            <select multiple class="form-control" name="as_director[]">
-                <option value="">None</option>
-                @foreach($movies as $movie)
-                    <option
-                        {{ !empty($asDirector) && in_array($movie->id, $asDirector)?'selected':'' }} value="{{ $movie->id }}">{{ $movie->title }}</option>
-                @endforeach
-            </select>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="form-group">
-            <label for="title">Movies as producer</label>
-            <select multiple class="form-control" name="as_producer[]">
-                <option value="">None</option>
-                @foreach($movies as $movie)
-                    <option
-                        {{ !empty($asProducer) && in_array($movie->id, $asProducer)?'selected':'' }} value="{{ $movie->id }}">{{ $movie->title }}</option>
-                @endforeach
-            </select>
-        </div>
-    </div>
-</div>
+@endif
 <div class="row">
     <div class="col-sm-12">
         <input type="submit" class="btn btn-primary" value="Save person"/>
