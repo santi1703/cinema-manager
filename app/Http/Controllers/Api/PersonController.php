@@ -22,7 +22,7 @@ class PersonController extends Controller
         if($request->has('last_name'))
             $personQuery->orWhere('last_name', 'LIKE', '%' . $request->get('last_name') . '%');
 
-        $persons = $personQuery->get();
+        $persons = $personQuery->orderBy('id')->get();
 
         return response()->json($persons);
     }
