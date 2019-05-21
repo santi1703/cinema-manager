@@ -28,7 +28,7 @@
             </table>
             <div class="row">
                 <div class="col-sm-12">
-                    <a href="{{ route('people.create') }}" class="btn btn-primary float-right">New movie</a>
+                    <a href="{{ route('people.create') }}" class="btn btn-primary float-right">New person</a>
                 </div>
             </div>
         </div>
