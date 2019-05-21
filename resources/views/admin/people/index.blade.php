@@ -18,7 +18,7 @@
                     <tr>
                         <td>{{ $person->id }}</td>
                         <td><a href="{{ route('people.edit', ['id' => $person->id]) }}">{{ $person->fullName }}</a></td>
-                        <td>{{ $person->date_of_birth }}</td>
+                        <td>{{ $person->friendlyBirthdate }}</td>
                         <td><button class="btn btn-danger" data-id="{{ $person->id }}" onclick="remove(this)">Delete</button></td>
                     </tr>
                 @empty

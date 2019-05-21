@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Person extends Model
 {
@@ -38,6 +39,11 @@ class Person extends Model
     public function AsProducer()
     {
         return $this->belongsToMany('App\Movie', 'producers_movies','person_id', 'movie_id');
+    }
+
+    public function getFriendlyBirthdateAttribute()
+    {
+        return Carbon::createFromFormat('Y-m-d', $this->date_of_birth)->format('d/m/Y');
     }
 
     public function getFirstNameAttribute()
