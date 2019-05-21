@@ -24,3 +24,11 @@ function beautifyWords($value)
 {
     return ucwords(strtolower($value));
 }
+
+function removeNullsFromArray($array)
+{
+    if(is_null($array[0]))
+        unset($array[0]);
+
+    return $array;
+}

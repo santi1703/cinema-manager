@@ -44,9 +44,14 @@ class MovieController extends Controller
         $data = $request->except('_token');
         $movie = Movie::create($data);
 
-        $movie->actors()->sync($request->get('actors'));
-        $movie->directors()->sync($request->get('directors'));
-        $movie->producers()->sync($request->get('producers'));
+        $actors = removeNullsFromArray($request->get('actors'));
+        $movie->actors()->sync($actors);
+
+        $directors = removeNullsFromArray($request->get('directors'));
+        $movie->directors()->sync($directors);
+
+        $producers = removeNullsFromArray($request->get('producers'));
+        $movie->producers()->sync($producers);
 
         return redirect()->route('movies.index');
     }
@@ -83,9 +88,14 @@ class MovieController extends Controller
         $data = $request->except('_token');
         $movie->update($data);
 
-        $movie->actors()->sync($request->get('actors'));
-        $movie->directors()->sync($request->get('directors'));
-        $movie->producers()->sync($request->get('producers'));
+        $actors = removeNullsFromArray($request->get('actors'));
+        $movie->actors()->sync($actors);
+
+        $directors = removeNullsFromArray($request->get('directors'));
+        $movie->directors()->sync($directors);
+
+        $producers = removeNullsFromArray($request->get('producers'));
+        $movie->producers()->sync($producers);
 
         return redirect()->route('movies.index');
     }

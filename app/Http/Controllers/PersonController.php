@@ -35,7 +35,7 @@ class PersonController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -43,9 +43,14 @@ class PersonController extends Controller
         $data = $request->except('_token');
         $person = Person::create($data);
 
-        $person->asActor()->sync($request->get('as_actor'));
-        $person->asDirector()->sync($request->get('as_director'));
-        $person->asProducer()->sync($request->get('as_producer'));
+        $asActor = removeNullsFromArray($request->get('as_actor'));
+        $person->asActor()->sync($asActor);
+
+        $asDirector = removeNullsFromArray($request->get('as_director'));
+        $person->asDirector()->sync($asDirector);
+
+        $asProducer = removeNullsFromArray($request->get('as_producer'));
+        $person->asProducer()->sync($asProducer);
 
         return redirect()->route('people.index');
     }
@@ -53,7 +58,7 @@ class PersonController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Person  $person
+     * @param  \App\Person $person
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -71,8 +76,8 @@ class PersonController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Person  $person
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Person $person
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -82,9 +87,14 @@ class PersonController extends Controller
         $data = $request->except('_token');
         $person->update($data);
 
-        $person->asActor()->sync($request->get('as_actor'));
-        $person->asDirector()->sync($request->get('as_director'));
-        $person->asProducer()->sync($request->get('as_producer'));
+        $asActor = removeNullsFromArray($request->get('as_actor'));
+        $person->asActor()->sync($asActor);
+
+        $asDirector = removeNullsFromArray($request->get('as_director'));
+        $person->asDirector()->sync($asDirector);
+
+        $asProducer = removeNullsFromArray($request->get('as_producer'));
+        $person->asProducer()->sync($asProducer);
 
         return redirect()->route('people.index');
     }
@@ -92,7 +102,7 @@ class PersonController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Person  $person
+     * @param  \App\Person $person
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
