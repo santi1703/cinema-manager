@@ -16,5 +16,5 @@ use Illuminate\Http\Request;
 Route::middleware(['api'])->namespace('Api')->group(function () {
     Route::get('/movies', 'MovieController@index');
 
-    Route::get('/persons', 'PersonController@index');
+    Route::get('/people', 'PersonController@index');
 });
