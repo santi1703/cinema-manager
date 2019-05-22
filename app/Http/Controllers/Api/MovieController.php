@@ -18,11 +18,7 @@ class MovieController extends Controller
         if($request->has('title'))
             $movieQuery->orWhere('title', 'LIKE', '%' . $request->get('title') . '%');
 
-        \DB::listen(function($sql, $bindings, $time) {
-    var_dump($sql);
-    var_dump($bindings);
-    var_dump($time);
-});die();
+        dd($movieQuery);
         $movies = $movieQuery->orderBy('id')->get();
 
         return response()->json($movies);
