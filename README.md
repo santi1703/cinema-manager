@@ -1,5 +1,5 @@
 # cinema-manager
-Cinema management system
+__Cinema management system__
 
 Libraries used:
 
