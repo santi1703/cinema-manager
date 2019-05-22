@@ -18,11 +18,11 @@ Endpoints provided:
 /api/movies
 params (optional):
 	-id : filters the movies by its id
-	-title : filters the movies that contains the value of the param in the title
+	-title : filters the movies that contains the value of the param in the title (Case sensitive)
 
 /api/people
 params (optional):
 	-id : filters the people by its id
-	-first_name: filters the people that contains the value of the param in its first name
-	-last_name: filters the people that contains the value of the param in its last name
-	-last_name: filters the people that contains the value of the param in its last name
+	-first_name: filters the people that contains the value of the param in its first name (Case sensitive)
+	-last_name: filters the people that contains the value of the param in its last name (Case sensitive)
+	-last_name: filters the people that contains the value of the param in its last name (Case sensitive)
