@@ -15,14 +15,14 @@ http://santyr-cinema-manager.herokuapp.com/public
 
 Endpoints provided:
 
-/api/movies\
+**/api/movies\**
 params (optional):\
-	-id : filters the movies by its id\
-	-title : filters the movies that contains the value of the param in the title (Case sensitive)\
+	-*id* : filters the movies by its id\
+	-*title* : filters the movies that contains the value of the param in the title (Case sensitive)\
 
-/api/people\
+**/api/people\**
 params (optional):\
-	-id : filters the people by its id\
-	-first_name: filters the people that contains the value of the param in its first name (Case sensitive)\
-	-last_name: filters the people that contains the value of the param in its last name (Case sensitive)\
-	-last_name: filters the people that contains the value of the param in its last name (Case sensitive)\
+	-*id* : filters the people by its id\
+	-*first_name*: filters the people that contains the value of the param in its first name (Case sensitive)\
+	-*last_name*: filters the people that contains the value of the param in its last name (Case sensitive)\
+	-*last_name*: filters the people that contains the value of the param in its last name (Case sensitive)\
