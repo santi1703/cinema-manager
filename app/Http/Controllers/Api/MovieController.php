@@ -16,7 +16,7 @@ class MovieController extends Controller
             $movieQuery->orWhere('id', '=', $request->get('id'));
 
         if($request->has('title'))
-            $movieQuery->orWhere('title', 'LIKE', '%' . $request->get('title') . '%');
+            $movieQuery->orWhere('title', 'ILIKE', '%' . $request->get('title') . '%');
 
         $movies = $movieQuery->orderBy('id')->get();
 
