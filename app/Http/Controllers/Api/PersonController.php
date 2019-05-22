@@ -17,10 +17,10 @@ class PersonController extends Controller
             $personQuery->orWhere('id', '=', $request->get('id'));
 
         if($request->has('first_name'))
-            $personQuery->orWhere('first_name', 'LIKE', '%' . $request->get('first_name') . '%');
+            $personQuery->orWhere('first_name', 'ILIKE', '%' . $request->get('first_name') . '%');
 
         if($request->has('last_name'))
-            $personQuery->orWhere('last_name', 'LIKE', '%' . $request->get('last_name') . '%');
+            $personQuery->orWhere('last_name', 'ILIKE', '%' . $request->get('last_name') . '%');
 
         $persons = $personQuery->orderBy('id')->get();
 
